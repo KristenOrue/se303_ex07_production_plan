@@ -18,7 +18,9 @@ class ProvinceTest < Minitest::Test
 
   def test_province_change_production
     asia = Province.new(sample_province_data)
-    assert_equal(230, asia.profit)
+    asia.producers[0].production = 20
+    expect(asia.shortfall).equal(-6)
+    expect(asia.profit).equal(292)
   end
 
 
