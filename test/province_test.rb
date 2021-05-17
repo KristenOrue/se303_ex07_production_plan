@@ -71,6 +71,7 @@ class ProvinceTest < Minitest::Test
     asia = Province.new(sample_province_data)
     asia.demand = "".to_f
     assert(asia.shortfall.nan? == false)
+    assert(asia.profit.nan? == false)
   end
 
 end
