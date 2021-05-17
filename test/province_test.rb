@@ -8,12 +8,12 @@ class ProvinceTest < Minitest::Test
 
   def test_province_shortfall
     asia = Province.new(sample_province_data)
-    assert_equal(5, asia.shortfall)
+    assert(asia.shortfall == 5)
   end
 
   def test_province_profit
     asia = Province.new(sample_province_data)
-    assert_equal(230, asia.profit)
+    assert(asia.profit == 230)
   end
 
   def test_province_change_production
@@ -41,6 +41,11 @@ class ProvinceTest < Minitest::Test
   def test_no_producers_profit
     no_producers_data
     assert(@noProducers.profit == 0)
+  end
+
+  def test_zero_demand
+    asia = Province.new(sample_province_data)
+    assert(asia.shortfall == 5)
   end
 
 end
