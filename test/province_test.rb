@@ -21,8 +21,14 @@ class ProvinceTest < Minitest::Test
     asia.producers[0].production = 20
     assert(asia.shortfall == -6)
     assert(asia.profit == 292)
-    # assert(customer.orders.last == order)
   end
+
+  data = [
+    name: "No producers",
+    producers: [],
+    demand: 30,
+    price: 20
+  ]
 
 
 end
