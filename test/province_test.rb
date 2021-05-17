@@ -40,7 +40,7 @@ class ProvinceTest < Minitest::Test
 
   def test_no_producers_profit
     no_producers_data
-    assert(@noProducers.shortfall == 30)
+    assert(@noProducers.profit == 0)
   end
 
 end
