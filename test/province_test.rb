@@ -43,9 +43,10 @@ class ProvinceTest < Minitest::Test
     assert(@noProducers.profit == 0)
   end
 
-  def test_zero_demand
+  def test_zero_demand_shortfall
     asia = Province.new(sample_province_data)
-    assert(asia.shortfall == 5)
+    asia.demand = 0
+    assert(asia.shortfall == -25)
   end
 
 end
