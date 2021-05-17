@@ -74,6 +74,17 @@ class ProvinceTest < Minitest::Test
     assert(asia.profit.nan? == false)
   end
 
+  def test_string_for_producers
+    data = {
+      name: "String producers",
+      producers: [''],
+      demand: 30,
+      price: 20
+    }
+    province_data = Province.new(data)
+    assert(province_data.shortfall == 0)
+  end
+
 end
 
 #Reference: https://semaphoreci.com/community/tutorials/getting-started-with-rspec
