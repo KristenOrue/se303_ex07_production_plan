@@ -23,12 +23,16 @@ class ProvinceTest < Minitest::Test
     assert(asia.profit == 292)
   end
 
-  data = [
-    name: "No producers",
-    producers: [],
-    demand: 30,
-    price: 20
-  ]
+  def test_no_producers
+    data = [
+      name: "No producers",
+      producers: [],
+      demand: 30,
+      price: 20
+    ]
+    noProducers = Province.new(data)
+    assert(noProducers.shortfall == 30)
+  end
 
 
 end
