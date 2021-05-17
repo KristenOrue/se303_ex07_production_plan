@@ -61,6 +61,12 @@ class ProvinceTest < Minitest::Test
     assert(asia.shortfall == -26)
   end
 
+  def test_negative_demand_profit
+    asia = Province.new(sample_province_data)
+    asia.demand = -1
+    assert(asia.profit == -10)
+  end
+
 end
 
 #Reference: https://semaphoreci.com/community/tutorials/getting-started-with-rspec
